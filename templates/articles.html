@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Статьи{% endblock %}
+
+{% block content %}
+<h1>Статьи</h1>
+{% for article in articles %}
+<div class="article-block" onclick="location.href='{{ url_for('article', article_id=article.id) }}'">
+    <h2>{{ article.title }}</h2>
+</div>
+{% endfor %}
+{% endblock %}

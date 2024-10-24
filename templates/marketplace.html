@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Биржа{% endblock %}
+
+{% block content %}
+<h1>Биржа фриланс услуг</h1>
+{% for resume in resumes %}
+<div class="resume-block" onclick="location.href='{{ url_for('resume', resume_id=resume.id) }}'">
+    <h2>{{ resume.title }}</h2>
+</div>
+{% endfor %}
+{% endblock %}
